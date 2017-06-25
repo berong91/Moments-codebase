@@ -24,6 +24,9 @@
     <Compile Include="Moments.py" />
     <Compile Include="src\Analysis\ImageAnalysis.py" />
     <Compile Include="src\Analysis\Model.py" />
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />

@@ -1,54 +1,36 @@
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
+from keras import optimizers
 from keras.preprocessing.image import ImageDataGenerator
 
 class Model :
     def CreateModel(self) :
-        #self.model = Sequential()
-        #self.model.add(Conv2D(32, (3, 3), input_shape=(48, 48, 1)))
-        #self.model.add(Activation('relu'))
-        #self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        #self.model.add(Conv2D(32, (3, 3)))
-        #self.model.add(Activation('relu'))
-        #self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        #self.model.add(Conv2D(32, (3, 3)))
-        #self.model.add(Activation('relu'))
-        #self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        #self.model.add(Flatten())
-        #self.model.add(Dense(32), Activation="relu")
-        ##self.model.add(Activation('relu'))
-        #self.model.add(Dropout(0.5))
-        #self.model.add(Dense(1))
-        #self.model.add(Activation('sigmoid'))
-
-        #self.model.compile(loss='binary_crossentropy',
-        #              optimizer='rmsprop',
-        #              metrics=['accuracy'])
-
         self.model = Sequential()
-        # input: 100x100 images with 3 channels -> (100, 100, 3) tensors.
-        # this applies 32 convolution filters of size 3x3 each.
-        self.model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(48, 48, 3)))
-        self.model.add(Conv2D(32, (3, 3), activation='relu'))
+        self.model.add(Conv2D(32, (3, 3), input_shape=(48, 48, 1)))
+        self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Dropout(0.25))
 
-        self.model.add(Conv2D(64, (3, 3), activation='relu'))
-        self.model.add(Conv2D(64, (3, 3), activation='relu'))
+        self.model.add(Conv2D(32, (3, 3)))
+        self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Dropout(0.25))
+
+        self.model.add(Conv2D(32, (3, 3)))
+        self.model.add(Activation('relu'))
+        self.model.add(MaxPooling2D(pool_size=(2, 2)))
 
         self.model.add(Flatten())
-        self.model.add(Dense(256, activation='relu'))
+        self.model.add(Dense(32), Activation="relu")
+        #self.model.add(Activation('relu'))
         self.model.add(Dropout(0.5))
-        self.model.add(Dense(10, activation='softmax'))
+        self.model.add(Dense(1))
+        self.model.add(Activation('sigmoid'))
 
-        sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-        self.model.compile(loss='categorical_crossentropy', optimizer=sgd)
+        self.model.compile(loss='binary_crossentropy',
+                      optimizer='rmsprop',
+                      metrics=['accuracy'])
+
+
 
     def TrainModel(self) :
         batch_size = 16
