@@ -1,4 +1,4 @@
-from src.Emotions.Model import Model 
+from src.Analysis.Model import Model 
 
 class Moments :
     def __init__(self, *args, **kwargs) :

@@ -22,16 +22,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Moments.py" />
-    <Compile Include="src\Emotions\EmotionDetector.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\Emotions\Model.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="src\Analysis\ImageAnalysis.py" />
+    <Compile Include="src\Analysis\Model.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\Emotions\" />
+    <Folder Include="src\Analysis\" />
     <Folder Include="src\Detection\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
