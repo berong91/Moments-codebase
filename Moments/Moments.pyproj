@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>403ae094-2f75-4622-814c-a652fac61bd3</ProjectGuid>
+    <ProjectGuid>13737da7-fe3d-4931-aac6-5a9cc5bca0fc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>actinator.py</StartupFile>
+    <StartupFile>Moments.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>actinator</Name>
-    <RootNamespace>actinator</RootNamespace>
+    <Name>Moments</Name>
+    <RootNamespace>Moments</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="actinator.py" />
+    <Compile Include="Moments.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

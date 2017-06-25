@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "actinator", "actinator\actinator.pyproj", "{403AE094-2F75-4622-814C-A652FAC61BD3}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Moments", "Moments\Moments.pyproj", "{13737DA7-FE3D-4931-AAC6-5A9CC5BCA0FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,8 +11,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{403AE094-2F75-4622-814C-A652FAC61BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{403AE094-2F75-4622-814C-A652FAC61BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13737DA7-FE3D-4931-AAC6-5A9CC5BCA0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13737DA7-FE3D-4931-AAC6-5A9CC5BCA0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
