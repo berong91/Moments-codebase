@@ -1,24 +1,24 @@
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
+from keras.preprocessing.image import ImageDataGenerator
 
 class Model :
-    
     def CreateModel(self) :
         self.model = Sequential()
-        self.model.add(Conv2D(32, (3, 3), input_shape=(1, 48, 48)))
+        self.model.add(Conv2D(12, (3, 3), input_shape=(48, 48, 1)))
         self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        self.model.add(Conv2D(32, (3, 3)))
+        self.model.add(Conv2D(12, (3, 3)))
         self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        self.model.add(Conv2D(64, (3, 3)))
+        self.model.add(Conv2D(24, (3, 3)))
         self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        self.model.add(Dense(64))
+        self.model.add(Dense(24))
         self.model.add(Activation('relu'))
         self.model.add(Dropout(0.5))
         self.model.add(Dense(1))
@@ -28,7 +28,7 @@ class Model :
                       optimizer='rmsprop',
                       metrics=['accuracy'])
 
-    def TrainModel(self, inputs) :
+    def TrainModel(self) :
         batch_size = 16
         # this is the augmentation configuration we will use for training
         train_datagen = ImageDataGenerator(
@@ -46,21 +46,21 @@ class Model :
         # batches of augmented image data
         train_generator = train_datagen.flow_from_directory(
                 'data/train',  # this is the target directory
-                target_size=(150, 150),  # all images will be resized to 150x150
+                target_size=(48, 48),  # all images will be resized to 150x150
                 batch_size=batch_size,
                 class_mode='binary')  # since we use binary_crossentropy loss, we need binary labels
 
         # this is a similar generator, for validation data
         validation_generator = test_datagen.flow_from_directory(
                 'data/validation',
-                target_size=(150, 150),
+                target_size=(48, 48),
                 batch_size=batch_size,
                 class_mode='binary')
 
-        model.fit_generator(
+        self.model.fit_generator(
         train_generator,
         steps_per_epoch=2000 // batch_size,
         epochs=50,
         validation_data=validation_generator,
         validation_steps=800 // batch_size)
-        model.save_weights('first_try.h5')  # always save your weights after training or during training
+        self.model.save_weights('first_try.h5')  # always save your weights after training or during training
